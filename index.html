@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- LOGIN PAGE -->
+    <section id="loginPage" class="login-layout">
+        <div class="brand-panel">
+            <div class="brand-mark">SA</div>
+            <p class="small-heading">STUDENT PORTAL</p>
+            <h1>Student Attendance</h1>
+            <p>Welcome to the Student Attendance Management System. Login to view your attendance details.</p>
+            <div class="brand-footer">ATTENDANCE MANAGEMENT SYSTEM</div>
+        </div>
+
+        <div class="login-card">
+            <h2>Student Login</h2>
+            <p class="login-description">Enter your registered student details to continue.</p>
+
+            <form id="loginForm">
+                <label for="regno">Register Number</label>
+                <input type="text" id="regno" placeholder="Enter Register Number" autocomplete="username" required>
+
+                <label for="department">Department</label>
+                <select id="department" required>
+                    <option value="">Select Department</option>
+                    <option value="CSE">Computer Science (CSE)</option>
+                    <option value="IT">Information Technology (IT)</option>
+                    <option value="ECE">Electronics (ECE)</option>
+                    <option value="EEE">Electrical (EEE)</option>
+                    <option value="AIDS">AI &amp; Data Science</option>
+                </select>
+
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" required>
+
+                <button type="submit" class="login-button">Login</button>
+                <p id="loginMessage" class="form-message" aria-live="polite"></p>
+            </form>
+
+            <div class="demo-info">
+                <strong>Demo Login Details</strong>
+                <p>Register Number: <b>245110023</b></p>
+                <p>Department: <b>CSE</b></p>
+                <p>Date of Birth: <b>20-03-2008</b></p>
+                <small>Use the matching details for any of the five students stored in this demo.</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- STUDENT DASHBOARD -->
+    <section id="dashboardPage" hidden>
+        <header class="topbar">
+            <div>
+                <h2>Student Attendance</h2>
+                <p>Attendance Management System</p>
+            </div>
+            <button id="logoutButton" class="logout-button" type="button">Logout</button>
+        </header>
+
+        <main class="dashboard-content">
+            <div class="welcome-section">
+                <div>
+                    <p class="small-heading">STUDENT DASHBOARD</p>
+                    <h1 id="studentName">Student Name</h1>
+                    <p id="studentDetails">Student Details</p>
+                </div>
+                <div class="profile-circle">
+                    <span id="studentInitial">S</span>
+                </div>
+            </div>
+
+            <div class="summary-cards">
+                <div class="summary-card">
+                    <p>Total Working Days</p>
+                    <h2 id="totalDays">0</h2>
+                </div>
+
+                <div class="summary-card present-card">
+                    <p>Present Days</p>
+                    <h2 id="presentDays">0</h2>
+                </div>
+
+                <div class="summary-card absent-card">
+                    <p>Absent Days</p>
+                    <h2 id="absentDays">0</h2>
+                </div>
+            </div>
+
+            <div class="attendance-card">
+                <div class="attendance-heading">
+                    <div>
+                        <p>OVERALL ATTENDANCE</p>
+                        <h1 id="attendancePercent">0%</h1>
+                    </div>
+                    <span id="attendanceStatus">Attendance Report</span>
+                </div>
+
+                <div class="progress-background">
+                    <div id="progressBar" class="progress-bar"></div>
+                </div>
+
+                <p class="progress-description">
+                    Your attendance percentage is calculated from the available records.
+                </p>
+            </div>
+
+            <div class="history-card">
+                <h2>Attendance History</h2>
+                <p class="history-description">Your daily attendance records.</p>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="attendanceTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <p class="demo-footer">Student Attendance Management System</p>
+        </main>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
